@@ -7,13 +7,19 @@ class LoginForm extends Component {
     constructor() {
         super();
         this.state = {
-            email: ''
+            email: '',
+            password: ''
         }
-        this.inputField = this.inputField.bind(this);
+        this.emailField = this.emailField.bind(this);
+        this.passwordField = this.passwordField.bind(this);
     }
 
-    inputField(email) {
+    emailField(email) {
         this.setState({ email });
+    }
+    
+    passwordField(password) {
+        this.setState({ password });
     }
     render() {
         return (
@@ -23,7 +29,16 @@ class LoginForm extends Component {
                         label='Email'
                         placeholder="abc@example.com"
                         value={this.state.email}
-                        onChangeText={this.inputField}
+                        onChangeText={this.emailField}
+                    />
+                </CardSection>
+                <CardSection>
+                    <Input
+                        secureTextEntry={true}
+                        label='Password'
+                        placeholder="password"
+                        value={this.state.password}
+                        onChangeText={this.passwordField}
                     />
                 </CardSection>
                 <CardSection>

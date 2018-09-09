@@ -3,7 +3,7 @@ import { TextInput, View, Text } from 'react-native';
 
 
 
-const Input = ({ label,placeholder, onChangeText, value }) => {
+const Input = ({ label, placeholder, secureTextEntry, onChangeText, value }) => {
     const { inputStyle, labelStyle, containerStyle } = styles;
     return (
         <View style={containerStyle}>
@@ -11,6 +11,7 @@ const Input = ({ label,placeholder, onChangeText, value }) => {
                 {label}
             </Text>
             <TextInput
+                secureTextEntry={secureTextEntry}
                 placeholder={placeholder}
                 autoCorrect={false}
                 style={inputStyle}
@@ -27,7 +28,7 @@ const styles = {
         paddingRight: 5,
         paddingLeft: 5,
         fontSize: 18,
-        height:41,
+        height: 41,
         lineHeight: 23,
         flex: 2
     },
@@ -38,7 +39,7 @@ const styles = {
     },
 
     containerStyle: {
-        height: 60,
+        height: 50,
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center'
