@@ -7,21 +7,22 @@ class LoginForm extends Component {
     constructor() {
         super();
         this.state = {
-            text: ''
+            email: ''
         }
         this.inputField = this.inputField.bind(this);
     }
 
-    inputField(text) {
-        this.setState({ text });
+    inputField(email) {
+        this.setState({ email });
     }
     render() {
         return (
             <Card>
                 <CardSection>
                     <Input
-                        label={this.state.text}
-                        value={this.state.text}
+                        label='Email'
+                        placeholder="abc@example.com"
+                        value={this.state.email}
                         onChangeText={this.inputField}
                     />
                 </CardSection>
