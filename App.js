@@ -1,20 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import {Header} from './src/components/index';
+import { View } from 'react-native';
+import { Header } from './src/components/index';
+import firebase from 'firebase';
+import LoginForm from './src/components/LoginScreen/loginForm';
 
 export default class App extends React.Component {
+  componentWillMount() {
+    firebase.initializeApp({
+
+    });
+  }
+
   render() {
     return (
       <View >
-        <Header name={'Authentication'}/>
-        <Text style={styles.wellcomeStyle} >WellCome To React App!</Text>
+        <Header name={'Authentication App '} />
+        <LoginForm />
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  wellcomeStyle: {
-    fontSize: 25
-  }
-});
