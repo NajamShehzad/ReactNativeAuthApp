@@ -7,7 +7,6 @@ import firebaseKey from './firebaseApi';
 
 export default class App extends React.Component {
   componentWillMount() {
-    console.log(firebaseKey);
     firebase.initializeApp(firebaseKey);
   }
 
